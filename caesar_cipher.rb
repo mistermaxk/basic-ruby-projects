@@ -33,8 +33,8 @@ def caesar_cipher(str, key = 0)
     end
   end
  
-  encoded_string = encoded.map { |ch| ch.chr("utf-8") }.join("")
-  encoded_string
+  decoded_string = encoded.map { |ch| ch.chr("utf-8") }.join("")
+  decoded_string
 end
 
 #test cases
