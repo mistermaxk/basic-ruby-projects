@@ -10,7 +10,7 @@ def substrings(word, dict)
       end
     end
   end
-  puts result
+  result
 end
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
