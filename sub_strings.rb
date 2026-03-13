@@ -1,8 +1,20 @@
 # Sub Strings 2026 @mistermaxk
 
 def substrings(word, dict)
-  # take word and array of valid substrings
-  # return a hash listing each substring (case insensitive) that was found in the original string and how many times it was found
+  strings = word.split(' ').map { |el| el.downcase.tr('^A-Za-z','') }
+  result = {}
+  strings.each do |word|
+    dict.each do |entry| 
+      if word.include?(entry)
+        if result[entry].nil?
+          result[entry] = 1
+        else
+          result[entry] += 1
+        end
+      end
+    end
+  end
+  result
 end
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
