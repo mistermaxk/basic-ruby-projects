@@ -2,19 +2,15 @@
 
 def substrings(word, dict)
   strings = word.split(' ').map { |el| el.downcase.tr('^A-Za-z','') }
-  result = {}
+  result = Hash.new(0)
   strings.each do |word|
     dict.each do |entry| 
       if word.include?(entry)
-        if result[entry].nil?
-          result[entry] = 1
-        else
-          result[entry] += 1
-        end
+        result[entry] += 1
       end
     end
   end
-  result
+  puts result
 end
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
